@@ -1,0 +1,11 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "API microservice which converts a given date/time to a valid UTC timestamp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joldie",
+  "license": "CC0-1.0"
+}
