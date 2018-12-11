@@ -1,19 +1,38 @@
 # Timestamp Microservice
 
-Timestamp Microservice project for [freeCodeCamp](https://www.freecodecamp.org/) course.
+REST API which converts a given date/time string into a valid UTC timestamp.
 
 ## Description
 
-API microservice which converts a given date/time to a valid UTC timestamp.
+The API endpoint is:
+
+`GET [site_url]/api/timestamp/:date_string?`
+
+#### Input
+
+A valid date/time string, parseable by `new Date(date_string)`.
+
+Note that a unix timestamp needs to be an integer (not a string) specifying milliseconds.
+
+#### Output
+
+A JSON object with the following structure:
+
+`{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }`
+
+If no input given, the current timestamp will be returned. If an invalid input is received, the API returns the following JSON object:
+
+`{"error" : "Invalid Date" }`.
 
 #### Example usage:
 
-- [project_url]/api/timestamp/2015-12-15
-- [project_url]/api/timestamp/1450137600000
+- `[site_url]/api/timestamp/2015-12-15`
+- `[site_url]/api/timestamp/1450137600000`
+- `[site_url]/api/timestamp/`
 
 #### Example output:
 
-- { "unix": 1450137600, "natural": "December 15, 2015" }
+- `{ "unix": 1450137600, "natural": "December 15, 2015" }`
 
 ## Contributing
 
