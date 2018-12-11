@@ -1,15 +1,20 @@
+"use strict";
+
 require("dotenv").config();
 
 // Express.js server
 const express = require("express");
 const app = express();
 
-// Enable CORS
-const cors = require("cors");
-app.use(cors());
+// Package for 'wrapping' API for serverless use
+const serverless = require("serverless-http");
 
 // Package for handling dates reliably
 const moment = require("moment");
+
+// Enable CORS
+const cors = require("cors");
+app.use(cors());
 
 // Default landing page
 app.get("/", (req, res) => {
@@ -48,3 +53,5 @@ app.get(
 var listener = app.listen(process.env.PORT, () => {
   console.log("Listening on port " + listener.address().port);
 });
+
+module.exports.handler = serverless(app);
