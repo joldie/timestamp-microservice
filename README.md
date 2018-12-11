@@ -20,7 +20,7 @@ A JSON object with the following structure:
 
 `{"unix": <date.getTime()>, "utc" : <date.toUTCString()> }`
 
-If no input given, the current timestamp will be returned. If an invalid input is received, the API returns the following JSON object:
+If no input given, the current time will be returned. If an invalid input is received, the API returns the following JSON object:
 
 `{"error" : "Invalid Date" }`.
 
@@ -32,7 +32,7 @@ If no input given, the current timestamp will be returned. If an invalid input i
 
 #### Example output:
 
-- `{ "unix": 1450137600, "natural": "December 15, 2015" }`
+- `{ "unix": 1544542820, "utc": "Tue, 11 Dec 2018 15:40:20 GMT" }`
 
 ## Contributing
 
