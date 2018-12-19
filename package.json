@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "API microservice which converts a given date/time to a valid UTC timestamp.",
   "scripts": {
-    "build": "netlify-lambda build express",
     "start": "node server.js"
   },
   "author": "joldie",
@@ -15,9 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "moment": "^2.22.2",
-    "netlify-lambda": "^1.1.0",
-    "serverless-http": "^1.8.0"
+    "moment": "^2.22.2"
   },
   "repository": {
     "type": "git",

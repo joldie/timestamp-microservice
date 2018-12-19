@@ -6,9 +6,6 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-// Package for 'wrapping' API for serverless use
-const serverless = require("serverless-http");
-
 // Package for handling dates reliably
 const moment = require("moment");
 
@@ -50,5 +47,3 @@ app.get(
 var listener = app.listen(process.env.PORT, () => {
   console.log("Listening on port " + listener.address().port);
 });
-
-module.exports.handler = serverless(app);
