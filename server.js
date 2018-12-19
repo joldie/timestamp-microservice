@@ -27,25 +27,22 @@ app.get(
   (req, res, next) => {
     if (typeof req.params.date_string === "undefined") {
       // If no input supplied, return current time
-      req.unix = moment().valueOf();
+      req.unix = moment().unix();
       req.utc = new Date().toUTCString();
     } else {
       // Else, try to parse input into valid Date object
       if (moment(req.params.date_string).isValid()) {
-        req.unix = moment(req.params.date_string).valueOf();
+        req.unix = moment(req.params.date_string).unix();
         req.utc = new Date(req.params.date_string).toUTCString();
       } else {
-        req.unix = false;
+        req.unix = 0;
+        req.utc = 0;
       }
     }
     next();
   },
   (req, res) => {
-    if (req.unix) {
-      res.json({ unix: req.unix, utc: req.utc });
-    } else {
-      res.json({ error: "Invalid Date" });
-    }
+    res.json({ unix: req.unix, utc: req.utc });
   }
 );
 
